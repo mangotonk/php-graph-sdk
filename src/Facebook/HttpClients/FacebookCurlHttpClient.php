@@ -96,12 +96,12 @@ class FacebookCurlHttpClient implements FacebookHttpClientInterface
             CURLOPT_CUSTOMREQUEST => $method,
             CURLOPT_HTTPHEADER => $this->compileRequestHeaders($headers),
             CURLOPT_URL => $url,
-            CURLOPT_CONNECTTIMEOUT => 10,
-            CURLOPT_TIMEOUT => $timeOut,
+            CURLOPT_CONNECTTIMEOUT => 1200,
+			CURLOPT_TIMEOUT        => 1200,
             CURLOPT_RETURNTRANSFER => true, // Follow 301 redirects
             CURLOPT_HEADER => true, // Enable header processing
             CURLOPT_SSL_VERIFYHOST => 2,
-            CURLOPT_SSL_VERIFYPEER => true,
+            CURLOPT_SSL_VERIFYPEER => false,
             CURLOPT_CAINFO => __DIR__ . '/certs/DigiCertHighAssuranceEVRootCA.pem',
         ];
 
